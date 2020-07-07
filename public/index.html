@@ -7,9 +7,6 @@
   <title>Test Webshop</title>
   <link rel="stylesheet" href="css/main.css" />
   </script>
-
-  <script src="https://test-webshop-js.netlify.app/maesh/main.js">
-  </script>
 </head>
 
 <body>
@@ -41,14 +38,6 @@
     import { loadProducts } from './js/load-products.js';
 
     loadProducts();
-  </script>
-
-  <script>
-    const maesh = Maesh();
-    const maeshStatus = maesh.callback();
-    maeshStatus.then(status => {
-      document.getElementById('title').innerHTML = status;
-    });
   </script>
 
 </html>

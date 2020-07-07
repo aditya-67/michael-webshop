@@ -2,9 +2,9 @@ function createProductFromTemplate(item) {
   const template = document.querySelector('#product');
   const product = template.content.cloneNode(true);
 
-   product.querySelector('h2').innerText = item.name;
+  product.querySelector('h2').innerText = item.name;
   product.querySelector('.description').innerText = item.description;
-  product.querySelector('.form').action = "./payment/v" + item.id
+  product.querySelector('.form').action = "./payment/"
   product.querySelector('[name=sku]').value = item.sku;
   product.querySelector('.price').innerText = new Intl.NumberFormat('en-US', {
     style: 'currency',
@@ -13,10 +13,10 @@ function createProductFromTemplate(item) {
 
   const img = product.querySelector('img');
   img.src = item.image;
-   img.alt = item.name;
+  img.alt = item.name;
 
-   return product;
- }
+  return product;
+}
 
 export async function loadProducts() {
   const data = await fetch('/.netlify/functions/get-products')
@@ -26,9 +26,9 @@ export async function loadProducts() {
   const container = document.querySelector('.products');
 
   data.forEach((item) => {
-     const product = createProductFromTemplate(item);
+    const product = createProductFromTemplate(item);
 
-     container.appendChild(product);
-   });
+    container.appendChild(product);
+  });
 
 }
