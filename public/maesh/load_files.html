@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" href="./static/style.css" />
+    <link href="./static/bootstrap.min.css" rel="stylesheet" type="text/css" media="all" />
+    <link href="https://fonts.googleapis.com/css?family=Quattrocento+Sans:400,700&amp;display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="container-fluid">
+        <div class="row info">
+
+            <div id="error" style="display: none;">Something went wrong!</div>
+<div class="showbox" id="loader">
+  <div class="loader">
+    <svg class="circular" viewBox="25 25 50 50">
+      <circle class="path" cx="50" cy="50" r="20" fill="none" stroke-width="5" stroke-miterlimit="10"/>
+    </svg>
+  </div>
+</div>
+<div id="content" style="width: 100%;display: none;">
+<div class="container">
+    
+    <div class="row">
+            <div class="col-md-12 d-md-none" style="text-align: center;">
+                <!-- <img class="pp-img" src="./static/maesh.png" alt="Image Alternative text" title="Image Title"> -->
+                <h1 class="mobile" style="padding-bottom: 25px;">Select a bank's e-wallet:</h1>
+                <div class="mobile" style="padding-bottom: 50px;">
+                    <a class="mobile"
+                        href="http://www.dbs.com.sg/personal/mobile/paylink/index.html?tranRef=O3gQn6KiWl"><img
+                            class="bankimage" style="width:200px;" src="./static/paylah.png" alt="DBS PayLah!"></a>
+                </div>
+
+                <div style="text-align: center;">
+                    <h1 class="instructions" id="desktop" style="display: none;">Grab your <span style="font-weight:700">phone</span> 📲 and use <span style="font-weight:700; font-size: larger;">any bank
+                            app</span> to scan the QR code & pay</h1>
+                    <h1 class="instructions" id="mobile" style="display: none;">Take a <span style="font-weight:700">screenshot</span> of the QR
+                        and
+                        upload it in your <span style="font-weight:700">bank app</span>'s Scan & Pay:</h1>
+                    <div style="margin:15px; text-align: center;">
+                        <img src="./static/dbs.png" alt="DBS logo" class="banks">
+                        <img src="./static/posb.jpg" alt="POSB logo" class="banks">
+                        <img src="./static/paylah.jpg" alt="PayLah! logo" class="banks">
+                        <img src="./static/ocbc.jpg" alt="OCBC Bank logo" class="banks">
+                        <img src="./static/uob.jpg" alt="UOB logo" class="banks">
+                        <img src="./static/citi-bank.jpg" alt="Citi Bank logo" class="banks">
+                        <img src="./static/hsbc.jpg" alt="HSBC logo" class="banks">
+                        <img src="./static/standard-chartered.jpg" alt="Standard Chartered logo" class="banks">
+                        <img src="./static/maybank.jpg" alt="Maybank logo" class="banks">
+                        <img src="./static/bank-of-china.jpg" alt="Bank of China logo" class="banks">
+                        <img src="./static/icbc.jpg" alt="ICBC logo" class="banks">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-6 col-md-6 d-none d-md-block">
+                <!-- <img class="pp-img" src="./static/maesh.png" alt="Image Alternative text" title="Image Title"> -->
+                <h1 class="mobile" style="padding-bottom: 25px;">Select a bank's e-wallet:</h1>
+                <div class="mobile" style="padding-bottom: 50px;">
+                    <a class="mobile"
+                        href="http://www.dbs.com.sg/personal/mobile/paylink/index.html?tranRef=O3gQn6KiWl"><img
+                            class="bankimage" style="width:200px;" src="./static/paylah.png" alt="DBS PayLah!"></a>
+                </div>
+
+                <div style="text-align: center;">
+                    <h1 class="instructions">Grab your <span style="font-weight:700">phone</span> 📲 and use <span style="font-weight:700; font-size: larger;">any bank
+                            app</span> to scan the QR code & pay</h1>
+                    <div style="margin:15px; text-align: center;">
+                        <img src="./static/dbs.png" alt="DBS logo" class="banks">
+                        <img src="./static/posb.jpg" alt="POSB logo" class="banks">
+                        <img src="./static/paylah.jpg" alt="PayLah! logo" class="banks">
+                        <img src="./static/ocbc.jpg" alt="OCBC Bank logo" class="banks">
+                        <img src="./static/uob.jpg" alt="UOB logo" class="banks">
+                        <img src="./static/citi-bank.jpg" alt="Citi Bank logo" class="banks">
+                        <img src="./static/hsbc.jpg" alt="HSBC logo" class="banks">
+                        <img src="./static/standard-chartered.jpg" alt="Standard Chartered logo" class="banks">
+                        <img src="./static/maybank.jpg" alt="Maybank logo" class="banks">
+                        <img src="./static/bank-of-china.jpg" alt="Bank of China logo" class="banks">
+                        <img src="./static/icbc.jpg" alt="ICBC logo" class="banks">
+                    </div>
+                    <h6>Powered by <a href="https://maesh.io" target="_blank"><img style="height: 40px;" src="./static/maesh.png" alt="Maesh"></a></h6>
+                </div>
+              </div>
+            <div class="col-lg-6 col-md-6">
+                <div style="padding: 25px 0;">
+                    <div class="middle">
+                        <div class="qr-parent">
+                            <div id="qr-code">
+                            </div>
+                            <img class="paynow" src="./static/paynow-2-lines.png" alt="PayNow Logo">
+                        </div>
+                    </div>
+                </div>
+                <div class="details" style="text-align: center;">
+                    <h1 style="font-size: 2.5rem;">S$ <span id="amount"></h1>
+                    <div style="font-size: 1.5rem;margin:2px;"><strong>To:</strong> Maesh Pte. Ltd. collecting for <span id="merchant"></span></div>
+                    <div style="font-size: 1.5rem;margin:2px;"><strong>Order number: </strong><span id="transactionId"></span></div>
+                    <div style="font-size: 1.5rem;margin:2px;"><strong>Date: </strong><span id="time"></span></div>
+                </div>
+            </div>
+            <div class="clearfix"></div>
+
+        </div>
+        <div class="row">
+            <div class="col-lg-12 d-md-none" style="text-align:center;">
+            <h6>Powered by <a href="https://maesh.io" target="_blank"><img style="height: 40px;" src="./static/maesh.png" alt="Maesh"></a></h6>
+        </div>
+        </div>
+    </div>
+</div>
+</div>
+</div>
+    <script src="./static/bootstrap.min.js"></script>
+    <script type="text/javascript" src="./static/test.js"></script>
+</body>
+
+</html>

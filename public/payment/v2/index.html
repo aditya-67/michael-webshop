@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- //custom-theme -->
+    <link href="../../css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+    <link rel="stylesheet" href="../../css/shop.css" type="text/css" media="screen" property="" />
+    <link href="../../css/style7.css" rel="stylesheet" type="text/css" media="all" />
+    <!-- Owl-carousel-CSS -->
+    <link href="../../css/easy-responsive-tabs.css" rel='stylesheet' type='text/css' />
+
+    <link rel="stylesheet" type="text/css" href="../../css/checkout.css">
+    <link href="../../css/style.css" rel="stylesheet" type="text/css" media="all" />
+    <!-- font-awesome-icons -->
+    <link href="../../css/font-awesome.css" rel="stylesheet">
+    </script>
+    <script src="https://test-webshop-js.netlify.app/maesh/main.js">
+    </script>
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="row" style="padding: 30px;">
+            <div class="col-xs-12 col-md-5">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">
+                            Payment Details
+                        </h3>
+                        <div class="checkbox pull-right">
+                            <label>
+                                <input type="checkbox" />
+                                Remember
+                            </label>
+                        </div>
+                    </div>
+                    <div class="panel-body">
+                        <form role="form">
+                            <div class="form-group">
+                                <label for="cardNumber">
+                                    CARD NUMBER</label>
+                                <div class="input-group">
+                                    <input type="text" class="form-control" id="cardNumber"
+                                        placeholder="Valid Card Number" required autofocus />
+                                    <span class="input-group-addon"><span
+                                            class="glyphicon glyphicon-lock"></span></span>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-xs-7 col-md-7">
+                                    <div class="form-group">
+                                        <label for="expityMonth">
+                                            EXPIRY DATE</label>
+                                        <div class="col-xs-6 col-lg-6 pl-ziro">
+                                            <input type="text" class="form-control" id="expityMonth" placeholder="MM"
+                                                required />
+                                        </div>
+                                        <div class="col-xs-6 col-lg-6 pl-ziro">
+                                            <input type="text" class="form-control" id="expityYear" placeholder="YY"
+                                                required /></div>
+                                    </div>
+                                </div>
+                                <div class="col-xs-5 col-md-5 pull-right">
+                                    <div class="form-group">
+                                        <label for="cvCode">
+                                            CV CODE</label>
+                                        <input type="password" class="form-control" id="cvCode" placeholder="CV"
+                                            required />
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <ul class="nav nav-pills nav-stacked">
+                    <li class="active"><a href="#"><span class="badge pull-right"><span
+                                    class="glyphicon glyphicon-usd"></span>4200</span> Final Payment</a>
+                    </li>
+                </ul>
+                <br />
+                <a href="#" class="btn btn-success btn-lg btn-block" role="button">Pay</a>
+            </div>
+
+            <!-- This is the div that we want to load our Maesh component. -->
+            <div class="col-md-5 col-xs-12 col-md-offset-2" id="maesh" style="text-align: center;">
+                Maesh Payment
+            </div>
+        </div>
+    </div>
+    <script src="../../js/jquery-2.1.4.min.js"></script>
+    <script src="../../js/bootstrap-3.1.1.min.js"></script>
+    <script>
+        const maesh = Maesh();
+
+        maesh.create({
+            api_key: '034681514e6135ccd4f9716309cfcb61c6cd11ba',
+            dom_element_id: 'maesh',
+            currency: 'SGD',
+            amount: 26800,
+            gotoUrl: 'https://brightbulbs.xyz',
+            referenceCode: 'ABCDEFGH'
+        });
+    </script>
+</body>
+
+</html>
