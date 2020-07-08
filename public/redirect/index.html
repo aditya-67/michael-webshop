@@ -221,17 +221,17 @@
         </div>
 
     </div>
-    <script> 
+    <script>
         const maesh = Maesh();
-        const ​maeshStatus = maesh.callback();
-        maeshstatus.then(
-            status => { 
-                if (status == "Unpaid" || status == "Error") {
-                    document.getElementById("success").style.display = "none";
-                } else {
-                    document.getElementById("error").style.display = "none";
-                }
-            });
+        const maeshStatus = maesh.callback();
+        maeshStatus.then(status => {
+            console.log(status);
+            if (status === 'Error' || status === 'Unpaid') {
+                document.getElementById('success').style.display = 'none';
+            } else {
+                document.getElementById('error').style.display = 'none';
+            }
+        })
     </script>
 </body>
 
