@@ -16,9 +16,9 @@
     <p>Select one of these payment methods</p>
     <div class="alternate-payment">
       <a href="#" class="btn btn-paypal" style="text-decoration: none;">Paypal</a>
-      <a href="#" class="btn btn-coinbase" style="text-decoration: none;">Scan QR and Pay</a>
-      <script>const
-        maesh = Maesh();</script>
+      <a href="" class="btn btn-coinbase" style="text-decoration: none;">Scan QR and Pay</a>
+      <div id="maesh-qr"></div>
+     
     </div>
     <p>Or enter your credit card information</p>
     <form class="ccjs-card">
@@ -86,7 +86,17 @@
     </form>
     <button class="btn btn-primary" type="button">Checkout</button>
   </main>
-
+  <script>const maesh = Maesh();</script>
+  <script>
+    maesh.create({ 
+          api_key : '47601230e4e35794bc6eb50305d182a8fc3ffb76', 
+          dom_element_id : ​'maesh'​, 
+          currency: ​'SGD'​, 
+          amount: ​21700​, 
+          gotoUrl: ​'https://merchant.com/success'​, 
+          referenceCode: ​'ABCDEFGH' 
+        })
+  </script>
 </body>
 
 </html>
