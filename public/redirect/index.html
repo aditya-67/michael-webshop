@@ -221,13 +221,18 @@
         </div>
 
     </div>
-    <script>
+    <script> 
         const maesh = Maesh();
         const ​maeshStatus = maesh.callback();
         // Resolve promise to get status
         maeshstatus.then(
             status => { 
                 ​// Do something with the status here
+                if (status == "Unpaid" || status == "Error") {
+                    document.getElementById("success").style.display = "none";
+                } else {
+                    document.getElementById("error").style.display = "none";
+                }
             });
     </script>
 </body>
