@@ -9,7 +9,6 @@
   <script src="https://js.maesh.io/v1.js">
 </script>
 </head>
-
 <body>
   <main>
     <h1>Checkout</h1>
@@ -17,7 +16,6 @@
     <div class="alternate-payment">
       <a href="#" class="btn btn-paypal" style="text-decoration: none;">Paypal</a>
       <a href="" class="btn btn-coinbase" style="text-decoration: none;">Scan QR and Pay</a>
-      <div id="maesh"></div>
     </div>
     <p>Or enter your credit card information</p>
     <form class="ccjs-card">
@@ -85,6 +83,7 @@
     </form>
     <button class="btn btn-primary" type="button">Checkout</button>
   </main>
+  <div id="maesh"></div>
   <script>const maesh = Maesh();</script>
   <script>
       maesh.create({
