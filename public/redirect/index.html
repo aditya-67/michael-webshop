@@ -248,10 +248,10 @@
                     headers: {
                         "Content-type": "application/json",
                     },
-                    body: JSON.stringify({
+                    body: {
                         key: 'cfde49ecc6310baa82d1ae3733e6ccb4132ce97b',
-                        reference: 'request'
-                    }),
+                        reference: ['request']
+                    },
                 })
                 .then((response) => response.json())
                 .then((json) => {
