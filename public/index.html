@@ -7,6 +7,16 @@
   <title>Michael Webshop</title>
   <link rel="stylesheet" href="css/main.css" />
   </script>
+  	<!-- Global site tag (gtag.js) - Google Analytics -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-110811143-5"></script>
+	<script>
+		window.dataLayer = window.dataLayer || [];
+		function gtag(){dataLayer.push(arguments);}
+		gtag('js', new Date());
+		gtag('config', 'UA-110811143-5', {
+				cookie_flags: 'max-age=7200;secure;samesite=none'
+			});
+	</script>
 </head>
 
 <body>
@@ -29,7 +39,7 @@
         <label for="quantity">Quantity</label>
         <input type="number" id="quantity" name="quantity" value="1" min="1" max="10" />
         <input type="hidden" name="sku" value="" />
-        <button type="submit">Buy Now</button>
+        <button onclick="ga('send', 'event', 'PrestaShop', 'download');" type="submit">Buy Now</button>
       </form>
     </div>
   </template>
