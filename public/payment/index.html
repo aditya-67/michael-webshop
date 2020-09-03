@@ -7,8 +7,9 @@
   <title>Checkout</title>
   <link href="style.css" rel="stylesheet" />
   <script src="https://js.maesh.io/v1.js">
-</script>
+  </script>
 </head>
+
 <body>
   <main>
     <h1>Checkout</h1>
@@ -84,16 +85,18 @@
     <button class="btn btn-primary" type="button">Checkout</button>
   </main>
   <div id="maesh"></div>
-  <script>const maesh = Maesh();</script>
   <script>
-      maesh.create({
-          api_key: '47601230e4e35794bc6eb50305d182a8fc3ffb76',
-          dom_element_id: 'maesh',
-          currency: 'SGD',
-          amount: 26800,
-          gotoUrl: 'https://michael-webshop.netlify.app/redirect',
-          referenceCode: 'ABCDEFGH'
-      });
+    const maesh = Maesh();
+  </script>
+  <script>
+    maesh.create({
+      api_key: 'cfde49ecc6310baa82d1ae3733e6ccb4132ce97b',
+      dom_element_id: 'maesh',
+      currency: 'SGD',
+      amount: 26800,
+      gotoUrl: 'https://michael-webshop.netlify.app/redirect',
+      referenceCode: 'request'
+    });
   </script>
 </body>
 

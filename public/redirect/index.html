@@ -221,17 +221,46 @@
         </div>
 
     </div>
+
+    <button onclick="checkStatus()"></button>
     <script>
+        // Include below code in a script tag
         const maesh = Maesh();
         const maeshStatus = maesh.callback();
-        maeshStatus.then(status => {
-            console.log(status);
-            if (status === 'Error' || status === 'Unpaid') {
-                document.getElementById('success').style.display = 'none';
-            } else {
-                document.getElementById('error').style.display = 'none';
-            }
-        })
+        // Resolve promise to get status
+        maeshStatus.then(
+            status => {
+                // Do something with the status here
+                if (status === 'Error' || status === 'Unpaid') {
+                    document.getElementById('success').style.display = 'none';
+                    document.getElementById('error').style.display = 'block';
+                    document.getElementById('errStatus').innerHTML = status;
+                } else {
+                    document.getElementById('success').style.display = 'block';
+                    document.getElementById('error').style.display = 'none';
+                    document.getElementById('succStatus').innerHTML = status;
+                }
+            });
+
+        function checkStatus() {
+            fetch('https://api.staging2.maesh.io/teststatus', {
+                    method: "POST",
+                    headers: {
+                        "Content-type": "application/json",
+                    },
+                    body: {
+                        key: 'cfde49ecc6310baa82d1ae3733e6ccb4132ce97b',
+                        reference: ['request']
+                    },
+                })
+                .then((response) => response.json())
+                .then((json) => {
+                    console.log(json);
+                })
+                .catch((e) => {
+                    console.log(e);
+                })
+        }
     </script>
 </body>
 
